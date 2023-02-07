@@ -1,0 +1,25 @@
+{% load static %} {% load bootstrap4 %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Daniel Garro" />
+        <title>Daniel Garro Profile</title>
+        {% bootstrap_css %} {% bootstrap_javascript jquery='full' %} 
+        <!-- My stylesheet -->
+        <link rel="stylesheet" type="text/css" href="{% static '/css/styles.css' %}">
+    </head>
+    <body class="m-3">
+
+        <main>
+            {% block content %}{% endblock content %}
+            <br />
+            <footer class="text-center pt-4 border-top border-muted">
+                &copy; 2023, Daniel Garro 
+            </footer>
+        </main>
+    </body>
+</html>
+

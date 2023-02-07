@@ -50,7 +50,7 @@ class Education(models.Model):
     area_of_study = models.CharField(max_length=75)
     date_attended = models.CharField(max_length=50)
     school_location = models.CharField(max_length=100)
-    accolade = models.CharField(max_length=100)
+    accolade = models.CharField(max_length=100, blank=True)
 
     def __str__(self) -> str:
         """return a string representation of Education"""

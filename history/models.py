@@ -44,3 +44,71 @@ class OtherWorkExperience(models.Model):
 
 class Education(models.Model):
     """A model representing education history"""
+
+    school_name = models.CharField(max_length=225)
+    degree = models.CharField(max_length=50)
+    area_of_study = models.CharField(max_length=75)
+    date_attended = models.CharField(max_length=50)
+    school_location = models.CharField(max_length=100)
+    accolade = models.CharField(max_length=100)
+
+    def __str__(self) -> str:
+        """return a string representation of Education"""
+        school = self.school_name.title()
+        degree = self.degree
+        attended = self.date_attended
+        return f"{school}, Degree: {degree} | {attended}"
+
+
+class Skill(models.Model):
+    """a model representing skills acquired"""
+
+    LEVEL_CHOICES = [
+        ("AL", "Advanced"),
+        ("FL", "Familiar"),
+        ("OL", "Other"),
+    ]
+
+    name = models.CharField(max_length=100)
+    level = models.CharField(max_length=15, choices=LEVEL_CHOICES)
+
+    def __str__(self) -> str:
+        """return string representation of Skill"""
+        skill = self.name.title()
+        level = self.level
+        return f"{skill} | Proficiency: {level}"
+
+
+class SoftSkill(models.Model):
+    """a model representing soft skills acquired"""
+
+    PROFICIENCY_CHOICES = [
+        ("HP", "High"),
+        ("MP", "Medium"),
+        ("LP", "Low"),
+    ]
+
+    name = models.CharField(max_length=125)
+    proficiency = models.CharField(max_length=25, choices=PROFICIENCY_CHOICES)
+
+    def __str__(self) -> str:
+        """return a string representation of SoftSkill"""
+        skill = self.name.title()
+        proficiency = self.proficiency
+        return f"{skill} | Proficiency: {proficiency}"
+
+
+class Hobby(models.Model):
+    """a model representing hobbies from resume"""
+
+    name = models.CharField(max_length=150)
+    dates_practiced = models.CharField(max_length=100)
+    description = models.CharField(max_length=250, blank=True)
+    url = models.URLField(blank=True, max_length=225)
+
+    def __str__(self) -> str:
+        """return a string representing Hobby model"""
+        hobby = self.name.title()
+        dates = self.dates_practiced
+        description = self.description
+        return f"{hobby} | {description} | {dates}"

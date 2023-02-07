@@ -19,3 +19,27 @@ class Project(models.Model):
         return f"{title} | {repo}"
 
 
+class Profile(models.Model):
+    """a model representing my resume profile"""
+
+    name = models.CharField(max_length=50)
+    text = models.TextField()
+
+    def __str__(self) -> str:
+        """return a string representation of Profile model"""
+        profile_name = self.name.title()
+        text = self.text
+        return f"{profile_name} | {text[:50]}..."
+
+
+class MyLinks(models.Model):
+    """a model representing my resume important links"""
+
+    name = models.CharField(max_length=125)
+    url = models.URLField(max_length=300)
+
+    def __str__(self) -> str:
+        """return a string representation of MyLinks"""
+        name = self.name.title()
+        url = self.url
+        return f"{name} | {url}"

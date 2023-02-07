@@ -38,6 +38,9 @@ class MyLinks(models.Model):
     name = models.CharField(max_length=125)
     url = models.URLField(max_length=300)
 
+    class Meta:
+        verbose_name_plural = "mylinks"
+
     def __str__(self) -> str:
         """return a string representation of MyLinks"""
         name = self.name.title()

@@ -106,6 +106,9 @@ class Hobby(models.Model):
     description = models.CharField(max_length=250, blank=True)
     url = models.URLField(blank=True, max_length=225)
 
+    class Meta:
+        verbose_name_plural = "hobbies"
+
     def __str__(self) -> str:
         """return a string representing Hobby model"""
         hobby = self.name.title()

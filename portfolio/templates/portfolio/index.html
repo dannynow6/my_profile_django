@@ -1,4 +1,29 @@
-{% extends "portfolio/base.html" %}
+{% extends "portfolio/base.html" %} {% load static %}
 {% block content %}
-
+    <div class="container">
+        <div class="shadow-lg p-4 m-3">
+            <article class="mb-2 border-bottom border-muted">
+                <h2 class="text-secondary text-center display-4">
+                    <img src="{% static 'img/logo.png' %}" width="55" height="55">
+                    Profile | Daniel Garro 
+                </h2>
+            </article>
+        </div>
+    </div>
+    <div class="container w-75 mt-3">
+        <h5 class="text-muted">Something<h5>
+    </div>
+    <br /> 
+    <div class="container">
+        <article>
+            <ul class="list-group list-group-flush">
+                {% for link in links %}
+                <li class="list-group-item">
+                    <p class="text-secondary">
+                    <a class="nav-item" href="{{ link.url }}">{{ link.name }}</a></p>
+                {% endfor %}
+                </li>
+            </ul>
+        </article>
+    </div>
 {% endblock content %}

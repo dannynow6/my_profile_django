@@ -45,20 +45,25 @@ def print_project(request, project_id):
     title_obj.textLine(text=f"{title.title()}")
     p.drawText(title_obj)
 
-    date_obj = p.beginText(540, 468)
+    date_obj = p.beginText(504, 468)
     date_obj.setFont("Helvetica", 11, leading=None)
     date_obj.textLine(text=f"{date.strftime('%m/%d/%Y')}")
     p.drawText(date_obj)
 
-    create_obj = p.beginText(72, 400)
-    create_obj.setFont("Helvetica", 11, leading=None)
+    create_obj = p.beginText(54, 400)
+    create_obj.setFont("Helvetica", 10, leading=None)
     create_obj.textLine(text=f"Created using: {created_with}")
     p.drawText(create_obj)
 
-    des_obj = p.beginText(72, 328)
+    des_obj = p.beginText(54, 328)
     des_obj.setFont("Helvetica", 11, leading=None)
-    des_obj.textLine(text=f"{description}")
+    des_obj.textLine(text=f"{description[:100]}")
     p.drawText(des_obj)
+    
+    des2_obj = p.beginText(72, 310)
+    des2_obj.setFont("Helvetica", 11, leading=None) 
+    des2_obj.textLine(text=f"{description[100:]}")
+    p.drawText(des2_obj)
 
     repo_obj = p.beginText(72, 256)
     repo_obj.setFont("Helvetica", 11, leading=None)
@@ -75,5 +80,11 @@ def print_project(request, project_id):
 def project(request, project_id):
     """a page for viewing the details of a single project"""
     project = Project.objects.get(id=project_id)
-    context = {"project": project}
+    if project.title.lower() == "photo blog":
+        url = "https://github.com/dannynow6/dg-photo"
+    elif project.title.lower() == "adventure game":
+        url = "https://github.com/dannynow6/adventure-game-v2" 
+    elif project.title.lower() == "podcast app":
+        url = "https://github.com/dannynow6/esp-kivy-project" 
+    context = {"project": project, "url": url}
     return render(request, "portfolio/project.html", context)

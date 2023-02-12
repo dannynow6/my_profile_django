@@ -1,14 +1,14 @@
 {% extends "portfolio/base.html" %} {% load static %} 
 {% block content %}
-    <div class="container w-75">
+    <div class="container w-75 mt-4">
         <ul class="list-group">
             {% for project in projects %} 
             <li class="list-group-item">
                 <article>
                     <h6 class="text-secondary">{{ project.title }}</h6>
-                    <a class="nav-item" href="{{ project.repo }}">Repo</a>
-                    <a class="nav-item" href="{% url 'portfolio:print_project' project.id %}">Print</a>
-                    <a class="nav-item" href="{% url 'portfolio:project' project.id %}">View</a>
+                    <br />
+                    <p class="text-secondary">{{ project.description }}</p>
+                    <a class="my-navs" href="{% url 'portfolio:project' project.id %}">View</a>
                 </article>
             </li>
             {% endfor %}

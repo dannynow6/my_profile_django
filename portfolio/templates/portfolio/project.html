@@ -6,9 +6,13 @@
     </div>
     <div class="container w-75">
         <article class="text-secondary text-center">
-            <p>{{ project.created_with }}</p>
+            <p class="mt-4">{{ project.created_with }}</p>
             <br /> 
             <p>{{ project.description }}</p>
+            <br />
+            <a class="my-navs" href="{{ url }}">Repo</a>
+            <br /> 
+            <a class="my-navs" href="{% url 'portfolio:print_project' project.id %}">Print</a>
         </article>
     </div>
 {% endblock content %}

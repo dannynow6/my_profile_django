@@ -12,7 +12,7 @@
         <link rel="stylesheet" type="text/css" href="{% static '/css/styles.css' %}">
     </head>
     <body class="m-3">
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f2fbff;">
+        <nav class="navbar navbar-expand-lg navbar-light shadow-lg p-3 mb-5 bg-white rounded" style="background-color: #f2fbff;">
             <a class="navbar-brand" href="{% url 'portfolio:index' %}">
               <img src="{% static 'img/logo.png' %}" width="30" height="30" class="d-inline-block align-top">
               Profile | Daniel Garro 
@@ -34,9 +34,11 @@
         <main>
             {% block content %}{% endblock content %}
             <br />
-            <footer class="text-center pt-4 border-top border-muted">
-                &copy; Daniel Garro 2023 
-            </footer>
+            <div class="container w-75">
+                <footer class="text-center text-secondary border-top border-muted pt-3">
+                    &copy; Daniel Garro 2023 
+                </footer>
+            </div>
         </main>
     </body>
 </html>

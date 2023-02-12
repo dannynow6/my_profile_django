@@ -1,0 +1,10 @@
+.my-navs {
+    text-decoration: none; 
+    outline: none; 
+}
+
+.my-navs:hover {
+    color: white;
+    background-color:rgb(24, 184, 247);
+    text-decoration: none; 
+}

@@ -21,3 +21,10 @@ def work_experience(request):
     otherwork = OtherWorkExperience.objects.all() 
     context = {'work': work, 'otherwork': otherwork} 
     return render(request, "history/work_experience.html", context) 
+
+def skills(request):
+    """a page for viewing my skills"""
+    skills = Skill.objects.all() 
+    soft_skills = SoftSkill.objects.all() 
+    context = {'skills': skills, 'soft_skills': soft_skills}
+    return render(request, "history/skills.html", context) 

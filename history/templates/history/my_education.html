@@ -1,0 +1,33 @@
+{% extends "portfolio/base.html" %} {% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="shadow-lg p-4 m-3">
+        <article class="border-bottom border-muted pt-2">
+            <h2 class="text-secondary text-center display-4">
+                <img src="{% static 'img/logo.png' %}" width="55" height="55">
+                Education | Daniel Garro 
+            </h2>
+        </article>
+    </div>
+</div>
+<div class="container w-75">
+    <article>
+        <ul class="list-group list-group-flush">
+            {% for e in edu %}
+            <li class="list-group-item text-secondary">
+                <p>{{ e.school_name }}</p>
+                <br />
+                <p>{{ e.degree }}</p>
+                {% if e.accolade %}
+                    <p>{{ e.accolade }}</p>
+                {% endif %}
+                <br /> 
+                <p>{{ e.date_attended }}</p>
+            {% endfor %}
+            </li>
+        </ul>
+    </article>
+</div>
+
+{% endblock content %}

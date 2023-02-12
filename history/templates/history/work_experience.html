@@ -1,0 +1,55 @@
+{% extends "portfolio/base.html" %} {% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="shadow-lg p-4 m-3">
+        <article class="border-bottom border-muted pt-2">
+            <h2 class="text-secondary text-center display-4">
+                <img src="{% static 'img/logo.png' %}" width="55" height="55">
+                Work Experience | Daniel Garro 
+            </h2>
+        </article>
+    </div>
+</div>
+<div class="container w-75">
+    <article>
+        <ul class="list-group list-group-flush">
+            {% for w in work %}
+            <li class="list-group-item text-secondary">
+                <p>{{ w.position_title }}</p>
+                <br />
+                <p>{{ w.company_name }}</p>
+                <br /> 
+                <p>{{ w.dates_employed }}</p>
+                <br />
+                <p>{{ w.job_description }}</p>
+                {% if w.additional_job_description %}
+                    <p>{{ w.additional_job_description }}</p>
+                {% endif %}
+            {% endfor %}
+            </li>
+        </ul>
+    </article>
+</div>
+<div class="container w-75">
+    <article>
+        <ul class="list-group list-group-flush">
+            {% for o in otherwork %}
+            <li class="list-group-item text-secondary">
+                <p>{{ o.position_title }}</p>
+                <br />
+                <p>{{ o.company_name }}</p>
+                <br /> 
+                <p>{{ o.dates_employed }}</p>
+                <br />
+                <p>{{ o.job_description }}</p>
+                {% if o.additional_job_description %}
+                    <p>{{ o.additional_job_description }}</p>
+                {% endif %}
+            {% endfor %}
+            </li>
+        </ul>
+    </article>
+</div>
+
+{% endblock content %}

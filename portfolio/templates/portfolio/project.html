@@ -1,7 +1,7 @@
 {% extends "portfolio/base.html" %} {% load static %}
 {% block content %}
     <div class="container w-75 border-bottom border-muted">
-        <h4 class="text-center text-secondary display-4">{{ project.title }}</h4>
+        <h4 class="text-center text-secondary display-4"><a class="my-navs-title" href="{% url 'portfolio:projects' %}">{{ project.title }}</a></h4>
         <br />
     </div>
     <div class="container w-75">

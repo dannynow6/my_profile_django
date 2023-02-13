@@ -13,3 +13,14 @@
     background-image: url("../img/abstract_bg.png");
 }
 
+.my-navs-title {
+    text-decoration: none;
+    outline: none;
+    color: rgb(117, 116, 116);
+}
+
+.my-navs-title:hover {
+    color: white;
+    background-color: rgb(24, 184, 247);
+    text-decoration: none; 
+}

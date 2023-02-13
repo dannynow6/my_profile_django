@@ -6,7 +6,7 @@
         <article class="border-bottom border-muted">
             <h2 class="text-secondary text-center display-4">
                 <img src="{% static 'img/logo.png' %}" width="55" height="55">
-                About | Daniel Garro 
+                <a class="my-navs-title" href="{% url 'portfolio:index' %}">About | Daniel Garro</a> 
             </h2>
         </article>
     </div>
@@ -19,7 +19,7 @@
         </div>
         <br />
         {% for link in links %}
-            <p class="text-muted text-right pr-3"><a class="my-navs" href="{{ link.url }}">{{ link.name }}</a></p>
+            <p class="text-muted text-right pr-3"><a class="my-navs" href="{{ link.url }}" target="_blank">{{ link.name }}</a></p>
         {% endfor %}
     </article>
 <div class="container w-75">
@@ -33,7 +33,7 @@
                 <p>{{ hobby.description }}</p>
                 <p>{{ hobby.dates_practiced }}</p>
                 {% if hobby.url %}
-                    <a class="my-navs" href="{{ hobby.url }}">Website</a> 
+                    <a class="my-navs" href="{{ hobby.url }}" target="_blank">Website</a> 
                 {% endif %}
             {% endfor %}
             </li>

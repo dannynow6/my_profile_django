@@ -5,7 +5,7 @@
             <article class="border-bottom border-muted">
                 <h2 class="text-secondary text-center display-4">
                     <img src="{% static 'img/logo.png' %}" width="55" height="55">
-                    Profile | Daniel Garro 
+                    <a class="my-navs-title" href="{% url 'portfolio:index' %}">Profile | Daniel Garro</a> 
                 </h2>
             </article>
         </div>
@@ -22,7 +22,7 @@
         <h5 class="text-muted text-right pr-3"><a class="my-navs" href="{% url 'history:about' %}">About</a></h5>
         {% for link in links %}
             <br />
-            <h5 class="text-muted text-right pr-3"><a class="my-navs" href="{{ link.url }}">{{ link.name }}</a></h5>
+            <h5 class="text-muted text-right pr-3"><a class="my-navs" href="{{ link.url }}" target="_blank">{{ link.name }}</a></h5>
         {% endfor %}
     </div>
    

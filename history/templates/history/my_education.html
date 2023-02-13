@@ -1,6 +1,11 @@
 {% extends "portfolio/base.html" %} {% load static %}
 {% block content %}
-
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-white">
+        <li class="breadcrumb-item"><a class="my-navs" href="{% url 'portfolio:index' %}">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">My Education</li>
+    </ol>
+</nav>
 <div class="container">
     <div class="shadow-lg p-4 m-3">
         <article class="border-bottom border-muted">

@@ -18,10 +18,10 @@
 </div>
 <div class="container w-75">
     <article>
-        <ul class="list-group list-group-flush">
+        <ul class="list-group list-group-flush border-bottom border-muted">
             {% for w in work %}
             <li class="list-group-item text-secondary">
-                <p>{{ w.position_title }}</p>
+                <h6>{{ w.position_title }}</h6>
                 <br />
                 <p>{{ w.company_name }}</p>
                 <br /> 
@@ -41,7 +41,7 @@
         <ul class="list-group list-group-flush">
             {% for o in otherwork %}
             <li class="list-group-item text-secondary">
-                <p>{{ o.position_title }}</p>
+                <h6>{{ o.position_title }}</h6>
                 <br />
                 <p>{{ o.company_name }}</p>
                 <br /> 

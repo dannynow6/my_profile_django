@@ -21,9 +21,9 @@
         <ul class="list-group list-group-flush">
             {% for e in edu %}
             <li class="list-group-item text-secondary">
-                <p>{{ e.school_name }}</p>
+                <h6>{{ e.school_name }}</h6>
                 <br />
-                <p>{{ e.degree }}</p>
+                <h6>{{ e.degree }}</h6>
                 {% if e.accolade %}
                     <p>{{ e.accolade }}</p>
                 {% endif %}

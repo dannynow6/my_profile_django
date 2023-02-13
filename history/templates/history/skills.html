@@ -17,39 +17,51 @@
 <div class="container w-75">
     <article>
         <h5 class="text-secondary text-center display-4">Hard Skills</h5>
+        <br /> 
+        <h5 class="text-secondary text-center">Advanced Skills</h5>
+        {% for skill in skills %}
         <ul class="list-group list-group-flush">
-            {% for skill in skills %}
+            {% if skill.level == "AL" %}
             <li class="list-group-item text-secondary">
                 <p>{{ skill.name }}</p>
-                {% if skill.level == "AL" %}
-                    <p>Level: Advanced</p>
-                {% endif %}
-                {% if skill.level == "FL" %}
-                    <p>Level: Familiar</p>
-                {% endif %}
-                {% if skill.level == "OL" %}
-                    <p>Level: Other</p>
-                {% endif %}
-            {% endfor %}
+            {% endif %}
             </li>
         </ul>
+        {% endfor %}
+        <br/>
+        <h5 class="text-secondary text-center">Familiar Skills</h5>
+        {% for skill in skills %}
+        <ul class="list-group list-group-flush">
+            {% if skill.level == "FL" %}
+            <li class="list-group-item text-secondary">
+                <p>{{ skill.name }}</p>
+            {% endif %}
+            </li>
+        </ul>
+        {% endfor %}
+         <br/>
+        <h5 class="text-secondary text-center">Other Skills</h5>
+        {% for skill in skills %}
+        <ul class="list-group list-group-flush">
+            {% if skill.level == "OL" %}
+            <li class="list-group-item text-secondary">
+                <p>{{ skill.name }}</p>
+            {% endif %}
+            </li>
+        </ul>
+        {% endfor %}
     </article>
 </div>
 <div class="container w-75">
     <article>
         <h5 class="text-secondary text-center display-4">Soft Skills</h5>
+        <br /> 
+        <h5 class="text-secondary text-center">Highly Proficient</h5>
         <ul class="list-group list-group-flush">
             {% for soft_skill in soft_skills %}
             <li class="list-group-item text-secondary">
-                <p>{{ soft_skill.name }}</p>
                 {% if soft_skill.proficiency == "HP" %}
-                    <p>Proficiency: High</p>
-                {% endif %}
-                {% if soft_skill.proficiency == "MP" %}
-                    <p>Proficiency: Medium</p>
-                {% endif %}
-                {% if soft_skill.proficiency == "LP" %}
-                    <p>Proficiency: Low</p>
+                <p>{{ soft_skill.name }}</p>
                 {% endif %}
             {% endfor %}
             </li>

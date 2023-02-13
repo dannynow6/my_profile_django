@@ -11,27 +11,19 @@
         </div>
     </div>
     <div class="container w-75 mt-3">
-        <h5 class="text-muted pl-3"><a class="my-navs" href="{% url 'portfolio:projects' %}">Projects</a><h5>
+        <h5 class="text-muted text-right pr-3"><a class="my-navs" href="{% url 'portfolio:projects' %}">Projects</a><h5>
         <br />
-        <h5 class="text-muted pl-3"><a class="my-navs" href="{% url 'history:work_experience' %}">Work Experience</a>
+        <h5 class="text-muted text-right pr-3"><a class="my-navs" href="{% url 'history:work_experience' %}">Work Experience</a></h5>
         <br />
-        <h5 class="text-muted pl-3"><a class="my-navs" href="{% url 'history:my_education' %}">Education</a>
+        <h5 class="text-muted text-right pr-3"><a class="my-navs" href="{% url 'history:my_education' %}">Education</a></h5>
         <br />
-        <h5 class="text-muted pl-3"><a class="my-navs" href="{% url 'history:skills' %}">Skills</a>
+        <h5 class="text-muted text-right pr-3"><a class="my-navs" href="{% url 'history:skills' %}">Skills</a></h5>
         <br />
-        <h5 class="text-muted pl-3"><a class="my-navs" href="{% url 'history:about' %}">About</a>
+        <h5 class="text-muted text-right pr-3"><a class="my-navs" href="{% url 'history:about' %}">About</a></h5>
+        {% for link in links %}
+            <br />
+            <h5 class="text-muted text-right pr-3"><a class="my-navs" href="{{ link.url }}">{{ link.name }}</a></h5>
+        {% endfor %}
     </div>
-    <br /> 
-    <div class="container w-75">
-        <article>
-            <ul class="list-group list-group-flush">
-                {% for link in links %}
-                <li class="list-group-item">
-                    <p class="text-secondary">
-                    <a class="my-navs" href="{{ link.url }}">{{ link.name }}</a></p>
-                {% endfor %}
-                </li>
-            </ul>
-        </article>
-    </div>
+   
 {% endblock content %}

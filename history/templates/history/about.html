@@ -13,6 +13,17 @@
 </div>
 <div class="container w-75">
     <article>
+        <h5 class="text-secondary text-center display-4">Summary</h5>
+        <div class="text secondary text-center p-3">
+            {{ summary.text }}
+        </div>
+        <br />
+        {% for link in links %}
+            <p class="text-muted text-right pr-3"><a class="my-navs" href="{{ link.url }}">{{ link.name }}</a></p>
+        {% endfor %}
+    </article>
+<div class="container w-75">
+    <article>
         <h5 class="text-secondary text-center display-4">For Fun</h5>
         <ul class="list-group list-group-flush">
             {% for hobby in hobbies %}

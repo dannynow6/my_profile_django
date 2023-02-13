@@ -29,7 +29,8 @@ class Profile(models.Model):
         """return a string representation of Profile model"""
         profile_name = self.name.title()
         text = self.text
-        return f"{profile_name} | {text[:50]}..."
+        id = self.id 
+        return f"{id} - {profile_name} | {text[:50]}..."
 
 
 class MyLinks(models.Model):

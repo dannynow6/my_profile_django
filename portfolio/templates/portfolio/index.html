@@ -1,8 +1,8 @@
 {% extends "portfolio/base.html" %} {% load static %}
 {% block content %}
-    <div class="container">
+    <div class="container" id="main-title-cont">
         <div class="shadow-lg p-4 m-3">
-            <article class="border-bottom border-muted pt-2">
+            <article class="border-bottom border-muted">
                 <h2 class="text-secondary text-center display-4">
                     <img src="{% static 'img/logo.png' %}" width="55" height="55">
                     Profile | Daniel Garro 
@@ -18,6 +18,8 @@
         <h5 class="text-muted pl-3"><a class="my-navs" href="{% url 'history:my_education' %}">Education</a>
         <br />
         <h5 class="text-muted pl-3"><a class="my-navs" href="{% url 'history:skills' %}">Skills</a>
+        <br />
+        <h5 class="text-muted pl-3"><a class="my-navs" href="{% url 'history:about' %}">About</a>
     </div>
     <br /> 
     <div class="container w-75">

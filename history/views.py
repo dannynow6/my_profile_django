@@ -28,3 +28,9 @@ def skills(request):
     soft_skills = SoftSkill.objects.all() 
     context = {'skills': skills, 'soft_skills': soft_skills}
     return render(request, "history/skills.html", context) 
+
+def about(request):
+    """A view displaying about me info and hobby info"""
+    hobbies = Hobby.objects.all() 
+    context = {'hobbies': hobbies} 
+    return render(request, "history/about.html", context) 

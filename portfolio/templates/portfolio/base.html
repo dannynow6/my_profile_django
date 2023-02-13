@@ -11,8 +11,8 @@
         <!-- My stylesheet -->
         <link rel="stylesheet" type="text/css" href="{% static '/css/styles.css' %}">
     </head>
-    <body class="m-3">
-        <nav class="navbar navbar-expand-lg navbar-light shadow-lg p-3 mb-5 bg-white rounded" style="background-color: #f2fbff;">
+    <body class="m-3" id="main-bg-img">
+        <nav class="navbar navbar-expand-lg navbar-light shadow-lg p-3 mb-5 bg-white rounded">
             <a class="navbar-brand" href="{% url 'portfolio:index' %}">
               <img src="{% static 'img/logo.png' %}" width="30" height="30" class="d-inline-block align-top">
               Profile | Daniel Garro 
@@ -33,6 +33,12 @@
                     </li>
                     <li>
                         <a class="nav-link" href="{% url 'history:my_education' %}">Education</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{% url 'history:skills' %}">Skills</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{% url 'history:about' %}">About</a>
                     </li>
                 </ul>
             </div>

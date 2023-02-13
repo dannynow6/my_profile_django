@@ -6,24 +6,24 @@
         <article class="border-bottom border-muted">
             <h2 class="text-secondary text-center display-4">
                 <img src="{% static 'img/logo.png' %}" width="55" height="55">
-                Education | Daniel Garro 
+                About | Daniel Garro 
             </h2>
         </article>
     </div>
 </div>
 <div class="container w-75">
     <article>
+        <h5 class="text-secondary text-center display-4">For Fun</h5>
         <ul class="list-group list-group-flush">
-            {% for e in edu %}
+            {% for hobby in hobbies %}
             <li class="list-group-item text-secondary">
-                <p>{{ e.school_name }}</p>
-                <br />
-                <p>{{ e.degree }}</p>
-                {% if e.accolade %}
-                    <p>{{ e.accolade }}</p>
-                {% endif %}
+                <h6>{{ hobby.name }}</h6>
                 <br /> 
-                <p>{{ e.date_attended }}</p>
+                <p>{{ hobby.description }}</p>
+                <p>{{ hobby.dates_practiced }}</p>
+                {% if hobby.url %}
+                    <a class="my-navs" href="{{ hobby.url }}">Website</a> 
+                {% endif %}
             {% endfor %}
             </li>
         </ul>

@@ -3,7 +3,7 @@
 
 <div class="container">
     <div class="shadow-lg p-4 m-3">
-        <article class="border-bottom border-muted pt-2">
+        <article class="border-bottom border-muted">
             <h2 class="text-secondary text-center display-4">
                 <img src="{% static 'img/logo.png' %}" width="55" height="55">
                 Skills | Daniel Garro 
@@ -13,10 +13,20 @@
 </div>
 <div class="container w-75">
     <article>
+        <h5 class="text-secondary text-center display-4">Skills</h5>
         <ul class="list-group list-group-flush">
             {% for skill in skills %}
             <li class="list-group-item text-secondary">
-                <p>{{ skill }}</p>
+                <p>{{ skill.name }}</p>
+                {% if skill.level == "AL" %}
+                    <p>Level: Advanced</p>
+                {% endif %}
+                {% if skill.level == "FL" %}
+                    <p>Level: Familiar</p>
+                {% endif %}
+                {% if skill.level == "OL" %}
+                    <p>Level: Other</p>
+                {% endif %}
             {% endfor %}
             </li>
         </ul>
@@ -24,10 +34,20 @@
 </div>
 <div class="container w-75">
     <article>
+        <h5 class="text-secondary text-center display-4">Soft Skills</h5>
         <ul class="list-group list-group-flush">
             {% for soft_skill in soft_skills %}
             <li class="list-group-item text-secondary">
-                <p>{{ soft_skill }}</p>
+                <p>{{ soft_skill.name }}</p>
+                {% if soft_skill.proficiency == "HP" %}
+                    <p>Proficiency: High</p>
+                {% endif %}
+                {% if soft_skill.proficiency == "MP" %}
+                    <p>Proficiency: Medium</p>
+                {% endif %}
+                {% if soft_skill.proficiency == "LP" %}
+                    <p>Proficiency: Low</p>
+                {% endif %}
             {% endfor %}
             </li>
         </ul>

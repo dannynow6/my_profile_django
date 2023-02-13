@@ -8,3 +8,8 @@
     background-color:rgb(24, 184, 247);
     text-decoration: none; 
 }
+
+#main-bg-img {
+    background-image: url("../img/abstract_bg.png");
+}
+

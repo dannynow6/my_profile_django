@@ -10,4 +10,6 @@ urlpatterns = [
     path("work_experience/", views.work_experience, name="work_experience"), 
     # A page for viewing skills 
     path("skills/", views.skills, name="skills"), 
+    # About me page with hobbies 
+    path("about/", views.about, name="about"), 
 ]

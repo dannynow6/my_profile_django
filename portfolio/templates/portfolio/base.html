@@ -6,7 +6,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="author" content="Daniel Garro" />
-        <title>Daniel Garro Profile</title>
+        <title>{% block title %}Daniel Garro Profile{% endblock title %}</title>
         {% bootstrap_css %} {% bootstrap_javascript jquery='full' %} 
         <!-- My stylesheet -->
         <link rel="stylesheet" type="text/css" href="{% static '/css/styles.css' %}">

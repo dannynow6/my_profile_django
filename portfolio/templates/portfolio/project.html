@@ -1,14 +1,15 @@
 {% extends "portfolio/base.html" %} {% load static %}
+{% block title %}{{ project.title|title }} Project{% endblock title %}
 {% block content %}
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb bg-white">
         <li class="breadcrumb-item"><a class="my-navs" href="{% url 'portfolio:index' %}">Home</a></li>
         <li class="breadcrumb-item"><a class="my-navs" href="{% url 'portfolio:projects' %}">Projects</a></li>
-        <li class="breadcrumb-item active" aria-current="page">{{ project.title }}</li>
+        <li class="breadcrumb-item active" aria-current="page">{{ project.title|title }}</li>
     </ol>
 </nav>
     <div class="container w-75 border-bottom border-muted">
-        <h4 class="text-center text-secondary display-4"><a class="my-navs-title" href="{% url 'portfolio:projects' %}">{{ project.title }}</a></h4>
+        <h4 class="text-center text-secondary display-4"><a class="my-navs-title" href="{% url 'portfolio:projects' %}">{{ project.title|title }}</a></h4>
         <br />
     </div>
     <div class="container w-75">

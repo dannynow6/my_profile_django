@@ -1,4 +1,5 @@
 {% extends "portfolio/base.html" %} {% load static %}
+{% block title %}About Daniel Garro{% endblock title %}
 {% block content %}
 <ol class="breadcrumb bg-white">
     <li class="breadcrumb-item"><a class="my-navs" href="{% url 'portfolio:index' %}">Home</a></li>
@@ -31,7 +32,7 @@
         <ul class="list-group list-group-flush">
             {% for hobby in hobbies %}
             <li class="list-group-item text-secondary">
-                <h6>{{ hobby.name }}</h6>
+                <h6>{{ hobby.name|title }}</h6>
                 <br /> 
                 <p>{{ hobby.description }}</p>
                 <p>{{ hobby.dates_practiced }}</p>

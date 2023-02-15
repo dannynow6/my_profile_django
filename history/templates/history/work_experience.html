@@ -1,4 +1,5 @@
 {% extends "portfolio/base.html" %} {% load static %}
+{% block title %}Daniel Garro's Work Experience{% endblock title %}
 {% block content %}
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb bg-white">
@@ -21,9 +22,9 @@
         <ul class="list-group list-group-flush border-bottom border-muted">
             {% for w in work %}
             <li class="list-group-item text-secondary">
-                <h6>{{ w.position_title }}</h6>
+                <h6>{{ w.position_title|title }}</h6>
                 <br />
-                <p>{{ w.company_name }}</p>
+                <p>{{ w.company_name|title }}</p>
                 <br /> 
                 <p>{{ w.dates_employed }}</p>
                 <br />
@@ -41,9 +42,9 @@
         <ul class="list-group list-group-flush">
             {% for o in otherwork %}
             <li class="list-group-item text-secondary">
-                <h6>{{ o.position_title }}</h6>
+                <h6>{{ o.position_title|title }}</h6>
                 <br />
-                <p>{{ o.company_name }}</p>
+                <p>{{ o.company_name|title }}</p>
                 <br /> 
                 <p>{{ o.dates_employed }}</p>
                 <br />

@@ -1,4 +1,5 @@
 {% extends "portfolio/base.html" %} {% load static %}
+{% block title %}Daniel Garro's Skills{% endblock title %}
 {% block content %}
 <ol class="breadcrumb bg-white">
     <li class="breadcrumb-item"><a class="my-navs" href="{% url 'portfolio:index' %}">Home</a></li>
@@ -23,7 +24,7 @@
         <ul class="list-group list-group-flush">
             {% if skill.level == "AL" %}
             <li class="list-group-item text-secondary">
-                <p>{{ skill.name }}</p>
+                <p>{{ skill.name|title }}</p>
             {% endif %}
             </li>
         </ul>
@@ -34,7 +35,7 @@
         <ul class="list-group list-group-flush">
             {% if skill.level == "FL" %}
             <li class="list-group-item text-secondary">
-                <p>{{ skill.name }}</p>
+                <p>{{ skill.name|title }}</p>
             {% endif %}
             </li>
         </ul>
@@ -45,7 +46,7 @@
         <ul class="list-group list-group-flush">
             {% if skill.level == "OL" %}
             <li class="list-group-item text-secondary">
-                <p>{{ skill.name }}</p>
+                <p>{{ skill.name|title }}</p>
             {% endif %}
             </li>
         </ul>
@@ -61,7 +62,7 @@
             {% for soft_skill in soft_skills %}
             <li class="list-group-item text-secondary">
                 {% if soft_skill.proficiency == "HP" %}
-                <p>{{ soft_skill.name }}</p>
+                <p>{{ soft_skill.name|title }}</p>
                 {% endif %}
             {% endfor %}
             </li>

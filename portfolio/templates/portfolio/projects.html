@@ -1,4 +1,5 @@
 {% extends "portfolio/base.html" %} {% load static %} 
+{% block title %}Daniel Garro's Projects{% endblock title %}
 {% block content %}
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb bg-white">
@@ -21,7 +22,7 @@
         {% for project in projects %} 
         <li class="list-group-item">
             <article>
-                <h6 class="text-secondary">{{ project.title }}</h6>
+                <h6 class="text-secondary">{{ project.title|title }}</h6>
                 <br />
                 <p class="text-secondary">{{ project.description }}</p>
                 <a class="my-navs" href="{% url 'portfolio:project' project.id %}">View</a>

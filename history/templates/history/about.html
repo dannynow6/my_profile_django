@@ -22,9 +22,11 @@
             {{ summary.text }}
         </div>
         <br />
+        <p class="text-muted text-center">
         {% for link in links %}
-            <p class="text-muted text-right pr-3"><a class="my-navs" href="{{ link.url }}" target="_blank">{{ link.name }}</a></p>
+            <a class="my-navs-about" href="{{ link.url }}" target="_blank">{{ link.name }}</a>
         {% endfor %}
+        </p>
     </article>
 <div class="container w-75">
     <article>

@@ -1,0 +1,5 @@
+# fontawesomefree=6.3.0
+django-bootstrap4=22.3 
+reportlab=3.6.12
+Pillow=9.4.0
+Django=4.1.6 

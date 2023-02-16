@@ -24,3 +24,16 @@
     background-color: rgb(24, 184, 247);
     text-decoration: none; 
 }
+
+.my-navs-about {
+    text-decoration: none;
+    outline: none;
+    padding-left: 5px; 
+    padding-right: 5px; 
+}
+
+.my-navs-about:hover {
+    color: white;
+    background-color:rgb(24, 184, 247);
+    text-decoration: none; 
+}

@@ -22,8 +22,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'portfolio:index' %}">Home <span class="sr-only">(current)</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'portfolio:index' %}">Home<span class="sr-only">(current)</span></a>
                     </li>
                     <li>
                         <a class="nav-link" href="{% url 'portfolio:projects' %}">Projects</a>
@@ -48,7 +48,7 @@
             <br />
             <div class="container w-75">
                 <footer class="text-center text-dark border-top border-muted pt-3">
-                    &copy; <img src="{% static 'img/logo.png' %}" width="25" height="25" class="d-inline-block"> Daniel Garro 2023 
+                    <img src="{% static 'img/logo.png' %}" width="25" height="25" class="d-inline-block"> &copy; Daniel Garro 2023 
                 </footer>
             </div>
         </main>

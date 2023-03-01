@@ -37,3 +37,7 @@
     background-color:rgb(24, 184, 247);
     text-decoration: none; 
 }
+
+#test-card {
+    box-shadow: 10px 5px 5px grey;
+}

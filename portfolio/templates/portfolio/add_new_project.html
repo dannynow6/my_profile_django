@@ -1,0 +1,32 @@
+{% extends "portfolio/base.html" %} {% load static %}
+{% block title %}Add New Project Form{% endblock title %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-white">
+        <li class="breadcrumb-item"><a class="my-navs" href="{% url 'portfolio:index' %}">Home</a></li>
+        <li class="breadcrumb-item"><a class="my-navs" href="{% url 'portfolio:projects' %}">Projects</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Add New Project</li>
+    </ol>
+</nav>
+<div class="container w-75 p-4 my-4 border">
+    <h3 class="text-secondary p-4 border-bottom" style="background-color: #f2fbff;">New Project</h3>
+    <div class="container p-4 my-2">
+      <form action="{% url 'portfolio:add_new_project' project.id %}" method="POST">
+      {% csrf_token %} 
+      <p>
+        {{ form.as_p }}
+      </p>
+        <button
+          type="submit"
+          class="btn btn-lg btn-outline-primary"
+          role="button"
+          alt="submit"
+          value="Save"
+        >
+          Save New Project
+        </button>
+      </form>
+    </div>
+  </div>
+{% endblock content %}

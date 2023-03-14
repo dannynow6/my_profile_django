@@ -12,4 +12,6 @@ urlpatterns = [
     path("<int:project_id>/print/", views.print_project, name="print_project"), 
     # A page to view a single project 
     path("<int:project_id>/", views.project, name="project"), 
+    # A page to add a new project 
+    path("<int:project_id>/add_new_project/", views.add_new_project, name="add_new_project"),
 ]

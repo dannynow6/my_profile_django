@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import MyLinks
 from .models import Project
+from .forms import ProjectForm
 import datetime
 
 # Imports for using ReportLab for PDF gen
@@ -59,9 +60,9 @@ def print_project(request, project_id):
     des_obj.setFont("Helvetica", 11, leading=None)
     des_obj.textLine(text=f"{description[:100]}")
     p.drawText(des_obj)
-    
+
     des2_obj = p.beginText(72, 310)
-    des2_obj.setFont("Helvetica", 11, leading=None) 
+    des2_obj.setFont("Helvetica", 11, leading=None)
     des2_obj.textLine(text=f"{description[100:]}")
     p.drawText(des2_obj)
 
@@ -83,8 +84,35 @@ def project(request, project_id):
     if project.title.lower() == "photo blog":
         url = "https://github.com/dannynow6/dg-photo"
     elif project.title.lower() == "adventure game":
-        url = "https://github.com/dannynow6/adventure-game-v2" 
+        url = "https://github.com/dannynow6/adventure-game-v2"
     elif project.title.lower() == "podcast app":
-        url = "https://github.com/dannynow6/esp-kivy-project" 
+        url = "https://github.com/dannynow6/esp-kivy-project"
     context = {"project": project, "url": url}
     return render(request, "portfolio/project.html", context)
+
+
+def add_new_project(request, project_id):
+    """A page for adding a new project"""
+    old_project = Project.objects.get(id=project_id)
+    gitrepo = old_project.git_repo
+    old_title = old_project.title
+    created_using = old_project.created_with
+    describe = old_project.description
+    old_project_data = {
+        "git_repo": gitrepo,
+        "title": old_title,
+        "created_with": created_using,
+        "description": describe,
+    }
+
+    if request.method != "POST":
+        # Initial request; pre-fill form with project data
+        form = ProjectForm(initial=old_project_data)
+    else:
+        # POST data submitted and process data
+        form = ProjectForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("portfolio:projects")
+    context = {"form": form}
+    return render(request, "portfolio/add_new_project.html", context)

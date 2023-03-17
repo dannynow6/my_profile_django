@@ -1,4 +1,4 @@
-{% extends "portfolio/base.html" %} {% load static %}
+{% extends "portfolio/base.html" %} {% load static %} {% load bootstrap_icons %}
 {% block title %}Daniel Garro Profile Home{% endblock title %}
 {% block content %}
     <nav aria-label="breadcrumb">
@@ -28,7 +28,13 @@
         <h5 class="text-muted text-right pr-3"><a class="my-navs" href="{% url 'history:about' %}">About</a></h5>
         {% for link in links %}
             <br />
-            <h5 class="text-muted text-right pr-3"><a class="my-navs" href="{{ link.url }}" target="_blank">{{ link.name }}</a></h5>
+            <h5 class="text-muted text-right pr-3"><a class="my-navs" href="{{ link.url }}" target="_blank">
+                {% if link.name == 'GitHub' %}
+                {% bs_icon 'github' %} 
+                {% else %}
+                {% bs_icon 'linkedin' %}
+                {% endif %}
+                {{ link.name }}</a></h5>
         {% endfor %}
     </div>
    

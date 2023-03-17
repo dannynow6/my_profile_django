@@ -1,4 +1,4 @@
-{% extends "portfolio/base.html" %} {% load static %}
+{% extends "portfolio/base.html" %} {% load static %} {% load bootstrap_icons %}
 {% block title %}{{ project.title|title }} Project{% endblock title %}
 {% block content %}
 <nav aria-label="breadcrumb">
@@ -18,11 +18,11 @@
             <br /> 
             <p>{{ project.description }}</p>
             <br />
-            <a class="my-navs" href="{{ url }}">Repo</a>
+            <a class="my-navs" href="{{ url }}">{% bs_icon 'github' %}</a>
             <br /> 
-            <a class="my-navs" href="{% url 'portfolio:print_project' project.id %}">Print</a>
+            <a class="my-navs" href="{% url 'portfolio:print_project' project.id %}">{% bs_icon 'printer' %}</a>
             <br />
-            <a class="my-navs" href="{% url 'portfolio:add_new_project' project.id %}">Add New Project</a>
+            <a class="my-navs" href="{% url 'portfolio:add_new_project' project.id %}">{% bs_icon 'file-plus' %}</a>
         </article>
     </div>
 {% endblock content %}

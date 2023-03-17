@@ -1,4 +1,4 @@
-{% extends "portfolio/base.html" %} {% load static %} 
+{% extends "portfolio/base.html" %} {% load static %} {% load bootstrap_icons %}
 {% block title %}Daniel Garro's Projects{% endblock title %}
 {% block content %}
 <nav aria-label="breadcrumb">
@@ -25,7 +25,7 @@
                 <h6 class="text-secondary">{{ project.title|title }}</h6>
                 <br />
                 <p class="text-secondary">{{ project.description }}</p>
-                <a class="my-navs" href="{% url 'portfolio:project' project.id %}">View</a>
+                <a class="my-navs" href="{% url 'portfolio:project' project.id %}">{% bs_icon 'link' size='1.5em' %}</a>
             </article>
         </li>
         {% endfor %}

@@ -1,4 +1,4 @@
-{% extends "portfolio/base.html" %} {% load static %}
+{% extends "portfolio/base.html" %} {% load static %} {% load bootstrap_icons %}
 {% block title %}About Daniel Garro{% endblock title %}
 {% block content %}
 <ol class="breadcrumb bg-white">
@@ -24,7 +24,13 @@
         <br />
         <p class="text-muted text-center">
         {% for link in links %}
-            <a class="my-navs-about" href="{{ link.url }}" target="_blank">{{ link.name }}</a>
+            <a class="my-navs-about" href="{{ link.url }}" target="_blank">
+                {% if link.name == 'GitHub' %}
+                {% bs_icon 'github' %} 
+                {% else %}
+                {% bs_icon 'linkedin' %}
+                {% endif %}
+                {{ link.name }}</a>
         {% endfor %}
         </p>
     </article>
@@ -39,7 +45,7 @@
                 <p>{{ hobby.description }}</p>
                 <p>{{ hobby.dates_practiced }}</p>
                 {% if hobby.url %}
-                    <a class="my-navs" href="{{ hobby.url }}" target="_blank">Website</a> 
+                    <a class="my-navs" href="{{ hobby.url }}" target="_blank">{% bs_icon 'link' size='1.5em' %}</a> 
                 {% endif %}
             {% endfor %}
             </li>
